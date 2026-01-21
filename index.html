@@ -877,11 +877,16 @@
                 <div class="contact-stye-one col-lg-7 pl-60 pl-md-15 pl-xs-15">
                     <div class="contact-form-style-one">
                         <h2 class="heading">Let’s work together! </h2>
-                        <form action="assets/mail/contact.php" method="POST" class="contact-form contact-form">
+                        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form contact-form">
+                            <!-- Web3Forms Access Key -->
+                            <input type="hidden" name="access_key" value="f3abe17f-1e7c-4e3d-b3e8-79e6bfaaf04f">
+                            <!-- Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                            
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input class="form-control" id="name" name="name" placeholder="Name" type="text">
+                                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
                                         <span class="alert-error"></span>
                                     </div>
                                 </div>
@@ -889,7 +894,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input class="form-control" id="email" name="email" placeholder="Email*" type="email">
+                                        <input class="form-control" id="email" name="email" placeholder="Email*" type="email" required>
                                         <span class="alert-error"></span>
                                     </div>
                                 </div>
@@ -903,7 +908,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group comments">
-                                        <textarea class="form-control" id="comments" name="comments" placeholder="Tell Us About Project *"></textarea>
+                                        <textarea class="form-control" id="comments" name="message" placeholder="Tell Us About Project *" required></textarea>
                                     </div>
                                 </div>
                             </div>
