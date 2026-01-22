@@ -5969,3 +5969,84 @@ body.loaded {
 		opacity: 0;
 	}
 }
+
+/* Custom Image Sizing Fixes */
+
+/* 1. Services (Expertise) Images */
+.services-style-one-item .thumb img {
+	width: 100%;
+	height: 350px;
+	/* Enforce consistent height */
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+/* 2. Hire Me Round Image */
+.hire-me-items .thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+/* 3. Testimonial Images */
+.testimonial-style-one .item .thumb .inner img {
+	width: 100%;
+	max-width: 350px;
+	/* Limit width to keep it manageable */
+	height: auto;
+	object-fit: contain;
+	/* Preserve natural aspect ratio */
+}
+
+
+/* Custom Header Social Placement */
+.header-social-right {
+	position: absolute;
+	right: 30px;
+	/* Push to the very right edge with slight padding */
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	z-index: 100;
+	/* High z-index to overlay everything */
+}
+
+/* Ensure the banner area is the reference point */
+.banner-style-one-area {
+	position: relative;
+	/* Make sure absolute children conform to this area */
+}
+
+.header-social-right a {
+	color: var(--color-heading);
+	font-size: 18px;
+	background: rgba(255, 255, 255, 0.8);
+	/* Glassmorphism feel */
+	backdrop-filter: blur(5px);
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+	/* Subtle shadow for depth */
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.bg-dark .header-social-right a {
+	background: rgba(255, 255, 255, 0.1);
+	color: var(--white);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-social-right a:hover {
+	background: var(--color-primary);
+	color: var(--white);
+	transform: translateX(-5px);
+	/* Slight hover nudge left */
+}
