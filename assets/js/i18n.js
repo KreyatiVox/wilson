@@ -18,7 +18,7 @@ const translations = {
         "hero_title": "Communication Visuelle & Storytelling d'Impact",
         "hero_subtitle": "Je transforme vos messages complexes en histoires visuelles claires et engageantes.",
         "download_cv": "Télécharger CV",
-        "hero_intro_p": "Expert en Communication Visuelle & Storytelling d'Impact. Depuis près de 9 ans, j'accompagne institutions, ONG et projets d'impact pour créer des récits puissants qui transforment les actions de terrain en messages clairs, crédibles et mémorables.",
+        "hero_intro_p": "Expert en Communication Visuelle & Storytelling d'Impact. Depuis 7+ ans, j'accompagne institutions, ONG et projets d'impact pour créer des récits puissants qui transforment les actions de terrain en messages clairs, crédibles et mémorables.",
         "hero_hi": "BONJOUR, JE SUIS<br> WILSON SAINTELUS",
         "hero_bottom_p": "Je ne crée pas du contenu pour être vu. Je construis des récits pour faire comprendre, convaincre et mobiliser. Communication Stratégique · Réalisation · Storytelling Institutionnel",
         "my_portfolio": "Mon Portfolio",
@@ -27,6 +27,7 @@ const translations = {
         "blog_title": "Blog & Insights",
         "blog_breadcrumb_home": "Accueil",
         "blog_breadcrumb_blog": "Blog",
+        "blog_read_more": "Lire la suite",
         
         // About Page
         "about_banner_subtitle": "Le Stratège",
@@ -84,42 +85,169 @@ const translations = {
         
         // Hire Me Section
         "hire_me_greeting": "Bonjour👋 je suis disponible pour du travail freelance",
-        "hire_me_btn": "Engagez-moi maintenant"
+        "hire_me_btn": "Engagez-moi maintenant",
+        
+        // Testimonials
+        "testi_cherubin_text": "« Wilson Saintelus est un vidéaste d’un grand professionnalisme et d’une créativité remarquable. Il possède une véritable capacité à comprendre une idée et à mobiliser les bons outils pour la transformer en visuels puissants et impactants. Son sens du détail, allié à sa ténacité, fait de lui un professionnel promis à de grandes réussites. »",
+        "testi_cherubin_role": "Collaboration : Production Vidéo"
     }
 };
 
+let currentLang = 'en';
+
 document.addEventListener('DOMContentLoaded', () => {
-    const lang = navigator.language || navigator.userLanguage;
-    // Check if language starts with 'fr' (e.g. 'fr', 'fr-FR', 'fr-CA')
-    if (lang && lang.toLowerCase().startsWith('fr')) {
-        translatePage('fr');
+    // 1. Initialize logic: Cache original text
+    cacheOriginalText();
+
+    // 2. Determine initial language
+    const savedLang = localStorage.getItem('i18n_lang');
+    const browserLang = navigator.language || navigator.userLanguage;
+    
+    if (savedLang) {
+        currentLang = savedLang;
+    } else if (browserLang && browserLang.toLowerCase().startsWith('fr')) {
+        currentLang = 'fr';
+    }
+
+    // 3. Apply language
+    setLanguage(currentLang);
+
+
+    // 4. Bind Toggle Button
+    const toggleBtn = document.getElementById('langToggle');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleLanguage();
+        });
+    }
+
+    // 5. Load Blog Posts (if on blog page)
+    const blogContainer = document.querySelector('.blog-items'); // Target container
+    if (blogContainer && window.location.pathname.includes('blog.html')) {
+        loadBlogPosts(currentLang);
     }
 });
 
-function translatePage(lang) {
+function cacheOriginalText() {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+        if (!el.hasAttribute('data-original-text')) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.setAttribute('data-original-text', el.placeholder);
+            } else if (el.querySelector('*') && el.childNodes.length > 0) {
+                 // Complex node: find text node
+                 el.childNodes.forEach(node => {
+                     if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
+                        el.setAttribute('data-original-text', node.nodeValue);
+                     }
+                 });
+            } else {
+                el.setAttribute('data-original-text', el.innerHTML);
+            }
+        }
+    });
+}
+
+
+function toggleLanguage() {
+    currentLang = (currentLang === 'en') ? 'fr' : 'en';
+    setLanguage(currentLang);
+}
+
+function setLanguage(lang) {
+    localStorage.setItem('i18n_lang', lang);
     const elements = document.querySelectorAll('[data-i18n]');
     
     elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            // Handle input placeholders
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                el.placeholder = translations[lang][key];
-            } 
-            // Handle elements with children but text node needs updating (complex)
-            // For simplicity, we assume data-i18n elements only contain text or we replace clean.
-            // If the element has icon children like <i class="..."></i> Text, we need to be careful.
-            // A safer way for buttons with icons:
-            else if (el.querySelector('*')) {
-                 // Element has children (likely icons). We need to find the text node.
-                 el.childNodes.forEach(node => {
-                     if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
-                         node.nodeValue = translations[lang][key];
-                     }
-                 });
-            } else {
-                el.innerHTML = translations[lang][key];
+        
+        if (lang === 'fr' && translations.fr[key]) {
+            // Apply French
+            updateElementText(el, translations.fr[key]);
+        } else {
+            // Restore English (Original)
+            const original = el.getAttribute('data-original-text');
+            if (original) {
+                updateElementText(el, original);
             }
         }
     });
+
+    // Update Toggle Button Text
+    const toggleBtn = document.getElementById('langToggle');
+    if (toggleBtn) {
+        toggleBtn.textContent = (lang === 'en') ? 'FR' : 'EN';
+    }
+
+    // Reload Blog Posts if necessary (to translate non-i18n dynamic content if we had any)
+    const blogContainer = document.querySelector('.blog-items');
+    if (blogContainer && window.location.pathname.includes('blog.html')) {
+        // Clear and reload to apply potentially localized data if backend supported it
+        // For now, our JSON is static, but good practice.
+        blogContainer.innerHTML = ''; 
+        loadBlogPosts(lang);
+    }
+}
+
+async function loadBlogPosts(lang) {
+    try {
+        const response = await fetch('blog-posts.json');
+        const posts = await response.json();
+        const container = document.querySelector('.blog-items');
+        
+        if (!container) return;
+
+        // This example assumes JSON has "title_fr", "description_fr" etc if we wanted dual language JSON.
+        // Since we only have static JSON now, we just render it. 
+        // Real-world would pick fields based on 'lang'.
+        
+        container.innerHTML = posts.map(post => `
+            <div class="item">
+                <div class="thumb">
+                    <a href="${post.link}">
+                        <img src="${post.image}" alt="${post.title}">
+                    </a>
+                </div>
+                <div class="info">
+                    <div class="meta">
+                        <ul>
+                            <li><i class="fas fa-calendar-alt"></i> ${post.date}</li>
+                            <li><i class="fas fa-user"></i> By ${post.author}</li>
+                        </ul>
+                    </div>
+                    <h4>
+                        <a href="${post.link}">${post.title}</a>
+                    </h4>
+                    <p>
+                        ${post.description}
+                    </p>
+                    <a class="btn-more" href="${post.link}">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        `).join('');
+        
+    } catch (error) {
+        console.error('Error loading blog posts:', error);
+    }
+}
+
+function updateElementText(el, text) {
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+    } else if (el.querySelector('*') && el.childNodes.length > 0) {
+        // Element has children (likely icons). We need to find the text node.
+        let textNodeFound = false;
+        el.childNodes.forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
+                node.nodeValue = text; // Be careful, this replaces exact matches. 
+                // Ideally we should replace purely the text content while preserving whitespace if needed, 
+                // but for this structure, direct replacement is usually safe.
+                textNodeFound = true;
+            }
+        });
+        // Fallback if no clean text node found but we have content (rare case in this site)
+    } else {
+        el.innerHTML = text;
+    }
 }
