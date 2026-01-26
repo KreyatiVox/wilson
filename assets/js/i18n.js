@@ -89,7 +89,98 @@ const translations = {
         
         // Testimonials
         "testi_cherubin_text": "« Wilson Saintelus est un vidéaste d’un grand professionnalisme et d’une créativité remarquable. Il possède une véritable capacité à comprendre une idée et à mobiliser les bons outils pour la transformer en visuels puissants et impactants. Son sens du détail, allié à sa ténacité, fait de lui un professionnel promis à de grandes réussites. »",
-        "testi_cherubin_role": "Collaboration : Production Vidéo"
+        "testi_cherubin_role": "Collaboration : Production Vidéo",
+
+        // Services
+        "services_subtitle": "Mon Expertise",
+        "services_title": "Ce que je fais",
+        "srv_av_title": "PRODUCTION AUDIOVISUELLE & POST-PRODUCTION",
+        "srv_av_desc": "Exécution experte en Montage Vidéo, VFX & Compositing, Motion Graphics, Étalonnage, Cinématographie et Sound Design.",
+        "srv_strat_title": "COMMUNICATION STRATÉGIQUE & CONTENU",
+        "srv_strat_desc": "Développement de Stratégie de Communication, Architecture de Storytelling Visuel, Journalisme d'Investigation, Développement de Marque et Messages Institutionnels.",
+        "srv_dig_title": "MÉDIAS DIGITAUX & SOCIAUX",
+        "srv_dig_desc": "Stratégie de Croissance de Plateforme (TikTok, Facebook, YouTube), Optimisation de Contenu, Gestion de Communauté et SEO.",
+        "srv_prod_title": "GESTION DE PRODUCTION",
+        "srv_prod_desc": "Gestion de Projet, Planification Budgétaire, Allocation de Ressources, Leadership d'Équipe et Conception de Pipeline de Production.",
+
+        // About (Index)
+        "idx_about_subtitle": "À Propos de Moi",
+        "idx_about_title": "Une Expertise de Terrain",
+        "idx_about_desc": "<strong>Réalisateur Audiovisuel & Stratège Digital | 7+ ans de leadership</strong><br><br>J'ai fait passer une plateforme de divertissement de 0 à 16K abonnés et 1,8M de vues en 60 jours. J'ai dirigé le journalisme vidéo d'investigation de la plus haute qualité en Haïti chez AyiboPost tout en étant pionnier des standards VFX/motion graphics pour le paysage médiatique national.<br><br><strong>Compétences Clés :</strong><br>Réalisation documentaire | VFX/compositing avancé | Architecture de communication institutionnelle | Ingénierie de croissance de plateforme | Storytelling humanitaire<br><br><strong>Réalisation Clé :</strong><br>Modernisation de l'infrastructure de communication institutionnelle tout en maintenant des standards éthiques, renforçant la crédibilité organisationnelle dans le secteur humanitaire haïtien.<br><br><strong>Outils & Technologies :</strong><br>Suite Adobe (Premiere Pro, After Effects, Photoshop, Illustrator), DaVinci Resolve, Meta Business Suite, Asana, WordPress.",
+        "idx_about_btn": "Contactez-moi",
+
+        // Impact
+        "impact_subtitle": "Parcours",
+        "impact_title": "Impact & Résultats",
+        "stat_exp_val": "7+ ANS",
+        "stat_exp_desc": "d'expérience en réalisation & production vidéo",
+        "stat_film_val": "10+ FILMS",
+        "stat_film_desc": "films institutionnels produits",
+        "stat_shows_val": "5+ ÉMISSIONS",
+        "stat_shows_desc": "émissions majeures gérées",
+        "stat_tiktok_val": "16K EN 2 MOIS",
+        "stat_tiktok_desc": "abonnés TikTok · 1,8M vues cumulées",
+        "stat_fb_val": "350K+ ABONNÉS",
+        "stat_fb_desc": "sur 5 pages Facebook",
+        "stat_yt_val": "4K+ ABONNÉS",
+        "stat_yt_desc": "croissance chaîne YouTube",
+        
+        // About Page Lists
+        "exp_sd_li1": "<strong>Leadership Stratégique :</strong> Conçu et exécuté une stratégie de communication globale intégrant plateformes digitales, contenu audiovisuel et engagement communautaire.",
+        "exp_sd_li2": "<strong>Standards & Éthique :</strong> Établi des standards créatifs et éditoriaux, assurant un storytelling éthique dans des contextes médicaux sensibles.",
+        "exp_sd_li3": "<strong>Impact :</strong> Renforcé la visibilité de l'hôpital auprès des partenaires internationaux. Produit des supports à fort impact pour les campagnes de sensibilisation.",
+        
+        "exp_ay_li1": "<strong>Storytelling Visuel :</strong> Produit des enquêtes vidéo long format couvrant des enjeux sociaux, politiques et humanitaires.",
+        "exp_ay_li2": "<strong>Production Avancée :</strong> Dirigé l'intégration des effets visuels, compositing fond vert et motion graphics sophistiqués.",
+        "exp_ay_li3": "<strong>Commercial & Documentaire :</strong> Livré des productions vidéo premium pour campagnes commerciales, vidéos explicatives et documentaires d'investigation.",
+        "exp_ay_li4": "<strong>Innovation :</strong> Pionnier des techniques VFX avancées adaptées au paysage médiatique haïtien. Établi des pipelines de production professionnels aux standards internationaux.",
+        
+        // Fun Facts
+        "fact_proj_desc": "Projets Réalisés",
+        "fact_client_desc": "Clients Satisfaits",
+
+        // About Page Content
+        "about_summary_text": "<strong>Réalisateur Audiovisuel & Stratège Digital | 7+ ans de leadership</strong><br>J'ai fait passer une plateforme de divertissement de 0 à 16K abonnés et 1,8M de vues en 60 jours. J'ai dirigé le journalisme vidéo d'investigation de la plus haute qualité en Haïti chez AyiboPost tout en étant pionnier des standards VFX/motion graphics pour le paysage médiatique national.",
+        "about_comp_1": "Réalisation Documentaire",
+        "about_comp_2": "VFX/Compositing Avancé",
+        "about_comp_3": "Architecture de Communication Institutionnelle",
+        "about_comp_4": "Ingénierie de Croissance de Plateforme",
+        "about_comp_5": "Storytelling Humanitaire",
+        
+        "exp_sd_title": "Responsable Communication & Contenu Digital",
+        "exp_sd_date": "Hôpital Saint Damien | Oct 2024 — Jan 2026",
+        "exp_sd_desc": "Promu Responsable Communication en 12 mois. Reconstruction de l'infrastructure de communication institutionnelle du principal hôpital pédiatrique d'Haïti, gestion de la transformation digitale, production audiovisuelle et engagement des parties prenantes.",
+        
+        "exp_ayibo_title": "Directeur Vidéo | Journaliste Vidéo",
+        "exp_ayibo_date": "AyiboPost / AyiboStudio | Nov 2020 — Déc 2024",
+        "exp_ayibo_desc": "Direction de la production audiovisuelle haut de gamme pour la première plateforme de journalisme d'investigation d'Haïti. Pionnier de l'intégration VFX/motion graphics et réalisation de documentaires long format.",
+        
+        "skill_av_title": "Production Audiovisuelle & Post-Production",
+        "skill_av_desc": "Niveau Expert : Montage Vidéo Avancé, VFX & Compositing, Motion Graphics, Étalonnage, Cinématographie, Sound Design, Réalisation Documentaire.",
+        "skill_av_tools": "<strong>Outils :</strong> Adobe Premiere Pro (Expert), After Effects (Expert), DaVinci Resolve (Expert), Photoshop, Illustrator.",
+        
+        "skill_strat_title": "Communication Stratégique & Digital",
+        "skill_strat_desc": "Développement de Stratégie de Communication, Architecture de Storytelling Visuel, Journalisme d'Investigation, Développement de Marque, Engagement des Parties Prenantes.",
+        "skill_strat_growth": "<strong>Croissance :</strong> Stratégie de Croissance de Plateforme (TikTok, Facebook, Instagram, YouTube), Optimisation de Contenu, SEO, Gestion de Communauté.",
+        
+        "edu_1": "<strong>Spécialisation Marketing Digital Avancé</strong> - LinkedIn Learning (2023)",
+        "edu_2": "<strong>Certification Production Film & Vidéo</strong> - LinkedIn Learning (2023)",
+        "edu_3": "<strong>Communication & Marketing Intégré</strong> - IE Business School (2022)",
+        "edu_4": "<strong>Certification Marketing Digital</strong> - Meta (2021)",
+        "edu_5": "<strong>Maîtrise des Techniques Cinématographiques</strong> - Hollywood Camera Work (2019)",
+        "edu_6": "<strong>Licence en Informatique</strong> - University of the People (En Cours)",
+        
+        "lang_1": "Français (Courant/Maternel)",
+        "lang_2": "Créole Haïtien (Maternel)",
+        "lang_3": "Anglais (Compétence Professionnelle)",
+
+        // Portfolio Categories
+        "cat_explainer": "Vidéos Explicatives",
+        "cat_commercial": "Publicités & Commerciaux",
+        "cat_short": "Courts Métrages",
+        "cat_music": "Vidéos Musicales",
+        "cat_doc": "Documentaires",
+        "cat_corp": "Films d'Entreprise"
     }
 };
 
@@ -135,13 +226,20 @@ function cacheOriginalText() {
         if (!el.hasAttribute('data-original-text')) {
             if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                 el.setAttribute('data-original-text', el.placeholder);
+            } else if (el.hasAttribute('data-i18n-html')) {
+                el.setAttribute('data-original-text', el.innerHTML);
             } else if (el.querySelector('*') && el.childNodes.length > 0) {
-                 // Complex node: find text node
-                 el.childNodes.forEach(node => {
-                     if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
+                let found = false;
+                for (const node of el.childNodes) {
+                    if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
                         el.setAttribute('data-original-text', node.nodeValue);
-                     }
-                 });
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    el.setAttribute('data-original-text', el.innerHTML);
+                }
             } else {
                 el.setAttribute('data-original-text', el.innerHTML);
             }
@@ -235,18 +333,20 @@ async function loadBlogPosts(lang) {
 function updateElementText(el, text) {
     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
         el.placeholder = text;
+    } else if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = text;
     } else if (el.querySelector('*') && el.childNodes.length > 0) {
-        // Element has children (likely icons). We need to find the text node.
         let textNodeFound = false;
-        el.childNodes.forEach(node => {
+        for (const node of el.childNodes) {
             if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
-                node.nodeValue = text; // Be careful, this replaces exact matches. 
-                // Ideally we should replace purely the text content while preserving whitespace if needed, 
-                // but for this structure, direct replacement is usually safe.
+                node.nodeValue = text;
                 textNodeFound = true;
+                break;
             }
-        });
-        // Fallback if no clean text node found but we have content (rare case in this site)
+        }
+        if (!textNodeFound) {
+            el.innerHTML = text;
+        }
     } else {
         el.innerHTML = text;
     }
